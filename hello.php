@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body>
+<body> 
     <pre>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
@@ -34,6 +34,7 @@
     </div>
   </div>
 </nav>
+<div class="box"></div>
 <div class="container">
     <?php print_r($_SERVER["REQUEST_URI"]) ?>
 </div>
