@@ -34,7 +34,6 @@
     </div>
   </div>
 </nav>
-<div class="box"></div>
 <div class="container">
     <?php print_r($_SERVER["REQUEST_URI"]) ?>
 </div>
