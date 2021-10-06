@@ -31,13 +31,19 @@
   </div>
 </nav>
 <div class="container">
-<?php if ($_SERVER["REQUEST_URI"] == "/") { ?>
-            Вы на главной странице! =)
-        <?php } elseif ($_SERVER["REQUEST_URI"] == "/pirates") { ?>
-            Тут мы вам расскажем о пиратах
-        <?php } elseif ($_SERVER["REQUEST_URI"] == "/marine") { ?>
-            А тут о морском дозоре
-        <?php } ?>
+<?php 
+    $url = $_SERVER["REQUEST_URI"];
+
+    echo "Вы на странице: $url, будьте внимательны!<br>";
+
+    if ($url == "/") {
+        require "views/main.php";
+    } elseif ($url == "/pirates") {
+        require "views/pirates.php";
+    } elseif ($url == "/marine") {
+        require "views/marine.php";
+    } 
+    ?>
 </div>
 </body>
 </html>
