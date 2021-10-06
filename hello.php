@@ -18,20 +18,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Главная</a>
+          <a class="nav-link active" aria-current="page" href="/hello.php#">Главная</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pirates">Пираты</a>
+          <a class="nav-link" href="/pirates.php#">Пираты</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/marine">Дозор</a>
+          <a class="nav-link" href="/marine.php#">Дозор</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <div class="container">
-    <?php print_r($_SERVER["REQUEST_URI"]) ?>
+<?php if ($_SERVER["REQUEST_URI"] == "/hello.php#") { ?>
+            Вы на главной странице! =)
+        <?php } elseif ($_SERVER["REQUEST_URI"] == "/pirates.php#") { ?>
+            Тут мы вам расскажем о пиратах
+        <?php } elseif ($_SERVER["REQUEST_URI"] == "/marine.php#") { ?>
+            А тут о морском дозоре
+        <?php } ?>
 </div>
 </body>
 </html>
