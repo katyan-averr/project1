@@ -32,18 +32,18 @@
 </nav>
 <div class="container">
 <?php 
-    $url = $_SERVER["REQUEST_URI"];
+        $url = $_SERVER["REQUEST_URI"];
 
-    echo "Вы на странице: $url, будьте внимательны!<br>";
+        echo "Вы на странице: $url, будьте внимательны!<br>";
 
-    if ($url == "/") {
-        require "views/main.php";
-    } elseif ($url == "/pirates") {
-        require "views/pirates.php";
-    } elseif ($url == "/marine") {
-        require "views/marine.php";
-    } 
-    ?>
+        if ($url == "/") {
+            require "../views/main.php"; 
+        } elseif ($url == "/pirates") {
+            require "../views/pirates.php"; 
+        } elseif ($url == "/marine") {
+            require "../views/marine.php"; 
+        } 
+        ?>
 </div>
 </body>
 </html>
