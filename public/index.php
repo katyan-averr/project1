@@ -34,13 +34,12 @@
 <?php 
         $url = $_SERVER["REQUEST_URI"];
 
-        echo "Вы на странице: $url, будьте внимательны!<br>";
 
         if ($url == "/") {
             require "../views/main.php"; 
-        } elseif ($url == "/pirates") {
+        } elseif (preg_match("#^/pirates#", $url)) {
             require "../views/pirates.php"; 
-        } elseif ($url == "/marine") {
+        } elseif (preg_match("#^/marine#", $url)) {
             require "../views/marine.php"; 
         } 
         ?>

@@ -1,16 +1,33 @@
-Тут мы вам расскажем о пиратах
+<div class="pt-4">
+    <i>
+    Тут мы расскажем о пиратах!
+    </i>
+</div>
 
 <?php
-    $is_image = $url == '/pirates/image';
-    $is_info = $url == '/pirates/info';
+    $this_img = $url == "/pirates/img"; 
+    $this_info = $url == "/pirates/info";     
 ?>
 
-Пираты
-<a href = "/pirates/image">Картинка</a>
-<a href = "/pirates/image">Описание</a>
+<div class="pt-4">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link <?php echo $this_img ? "active" : '' ?>" href="/pirates/img">Картинка</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo $this_info ? "active" : '' ?>" href="/pirates/info">Описание</a>
+      </li>
+    </ul>
+</div>
 
-<?php if ($is_image) {?>
-    <img src = "/images/monkey-d-luffy-nami-2uiY.jpg" alt = "">
-<?php} else if($is_info){ ?>
-    Пират в мире One Piece — это любой человек, который встаёт под флаг Весёлого Роджера и не важно, собирается ли он совершать пиратские, вредоносные действия или нет. Этого, однако, недостаточно, чтобы выставить награду за его голову, но зачастую достаточно, чтобы быть арестованным Морским Дозором.
-<?php}?>
+<?php
+    $url = $_SERVER["REQUEST_URI"];
+
+    if ($url == "/") {
+        require "../views/main.php";
+    } elseif ($url == "/pirates/img") {
+        require "../views/pirates/img.php";
+    } elseif (preg_match("#^/pirates/info#", $url)) {
+        require "../views/pirates/info.php";
+    } 
+?>
